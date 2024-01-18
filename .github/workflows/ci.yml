@@ -14,8 +14,7 @@ jobs:
       - uses: actions/setup-dotnet@v3
         with:
           global-json-file: Agnes.Laurencon/global.json
-      - run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./coverage/opencover.xml
-      - run: dotnet publish ./src/Leonardo.Web/Leonardo.Web.csproj --self-contained true --output ./win-x64/fibonacci -c Release -r win-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+      - run: dotnet publish Agnes.Laurencon/Agnes.Laurencon.Ocr.WebApi/Agnes.Laurencon.Ocr.WebApi.csproj --self-contained true --output ./win-x64/ALOcr -c Release -r win-x64 /p:PublishSingleFile=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
       - name: Upload WebApp1 Build Artifact
         uses: actions/upload-artifact@v2
         with:
